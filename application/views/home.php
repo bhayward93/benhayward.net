@@ -54,28 +54,40 @@
       <div class="row">
         <div class="container-fluid bottom-center">
           <div class="col-12">
-              <p><span class="fa fa-chevron-down chevron-wide"></span></p>
+              <p><a href="#aboutMe"><span class="fa fa-chevron-down chevron-wide"></span></a></p>
           </div>
         </div>
       </div>
     </div> 
     
     <!--Nav bar-->
-    <div id="navBar"class="container-fluid">
-      <div class="row">
-        <div class="col-12 fixed-top">
+        <div class="fixed-top">
           <?php $this->load->view('nav.php')?>
         </div>
-      </div>
-    </div>
         
-
     <div id="aboutMe" class="container-fluid about-me">
-      <div class="row">
         <div class="container-fluid parallax">
           <div class="row">
             <div class="col-lg-12">
-             
+             <div class="card align-center">
+              <div class="card-body">
+                <h5 class="card-title">ABOUT ME</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">
+                <p>
+                  Appologies if there is not much here; this website is currently in development. In future I will be adding a personal blog, a 'real' portfolio section and more.
+                </p>
+
+                <p>I am adaptable and responsible Web developer with a BSc (Hons) in Computer Science (Teesside University) and experience in a non-junior Web development position at a well-
+                    established online Pharmaceutical health care organization, working remote and accomplishing a lot in my time there.</p>
+                <p> I've also spent time as an Android Developer, creating a medically valid Android application that effectively cuts the appointment time for posterial assessments from 30 minutes to under 10. The intent is for this app to be trialed across the United Kingdom, generating data that will be used to support academic medical research into Chiropracty. </p>
+
+                <p>Currently I am searching for a new project to dedicate myself to, as either a Web developer or as Blockchain developer which will utilise my technical and problem 
+                    solving skills, and challenge me in new ways. In my spare time I program as a hobby, and enjoy learning new languages and new technologies. I am fascinated by Cryptocurrencies and have been for many years, Ethereum in particular has caught my attention as a developer platform for personal projects in the future, or a career path; conversely however I enjoy the style of full-stack Web development.</p>
+             <!--    <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -88,26 +100,34 @@
     </div>
     <script type="text/javascript">
       $(document).ready(function(){
-          $("#navBar").hide(); //Hide the nav
-          $(window).scroll(function () {  
-              if(isAfter("#aboutMe")) {
+    //       $("#navBar").hide(); //Hide the nav
+    //       $(window).scroll(function () {  
+    //           if(isAfter("#aboutMe")) {
+    //             $('#navBar').fadeIn();  //Show nav
+    //           } else {
+    //             console.log("hide");
+    //               $('#navBar').fadeOut(); //Hide nav
+    //           }
+    // });
 
+    // function isAfter(elem) {
+    //     var $e = $(elem);
+    //     var $window = $(window);
+    //     var docViewTop = $window.scrollTop();
+    //     var docViewBottom = docViewTop + $window.height();
+    //     var elemTop = $e.offset().top;
+    //     return elemTop <= docViewBottom;
+    // }
 
-                $('#navBar').fadeIn();  //Show nav
-              } else {
-                console.log("hide");
-                  $('#navBar').fadeOut(); //Hide nav
-              }
-    });
-
-    function isAfter(elem) {
-        var $e = $(elem);
-        var $window = $(window);
-        var docViewTop = $window.scrollTop();
-        var docViewBottom = docViewTop + $window.height();
-        var elemTop = $e.offset().top;
-        return elemTop <= docViewBottom;
-    }
+    /* https://stackoverflow.com/questions/28934736/why-are-my-bootstrap-btn-inverted-buttons-showing-up-as-grey-instead-of-a-black */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                 behavior: 'smooth'
+              });
+          });
+      });
   });
     </script>
     </body>
