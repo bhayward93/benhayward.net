@@ -1,0 +1,78 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Ben Hayward
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='The personal website of Ben Hayward, showcasing my programming projects in a variety of languages.')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    // Let the browser know that the website is optimized for mobile
+    meta(name='viewport', content='width=device-width')
+    // Latest compiled CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='/css/core.css')
+    // jQuery library
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    // Latest compiled JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  body
+    #home.container-fluid.home
+      .row
+        .container-fluid.parallax
+          .row
+            .col-lg-2
+            .col-lg-8
+              h1
+                | Ben Hayward
+      .row
+        .container-fluid.bottom-center
+          .col-12
+            p
+              a(href='#aboutMe')
+                span.fa.fa-chevron-down.chevron-wide
+    // Nav bar
+    .fixed-top
+      | load->view('nav.php')?>
+    #aboutMe.container-fluid.about-me
+      .container-fluid.parallax
+        .row
+          .col-lg-12
+            .card.align-center
+              .card-body
+                h5.card-title ABOUT ME
+                h6.card-subtitle.mb-2.text-muted
+                p.card-text
+                p
+                  | Appologies if there is not much here; this website is currently in development. In future I will be adding a personal blog, a 'real' portfolio section and more.
+                p
+                  | I am adaptable and responsible Web developer with a BSc (Hons) in Computer Science (Teesside University) and experience in a non-junior Web development position at a well-
+                  | established online Pharmaceutical health care organization, working remote and accomplishing a lot in my time there.
+                p
+                  | I've also spent time as an Android Developer, creating a medically valid Android application that effectively cuts the appointment time for posterial assessments from 30 minutes to under 10. The intent is for this app to be trialed across the United Kingdom, generating data that will be used to support academic medical research into Chiropracty.
+                p
+                  | Currently I am searching for a new project to dedicate myself to, as either a Web developer or as Blockchain developer which will utilise my technical and problem
+                  | solving skills, and challenge me in new ways. In my spare time I program as a hobby, and enjoy learning new languages and new technologies. I am fascinated by Cryptocurrencies and have been for many years, Ethereum in particular has caught my attention as a developer platform for personal projects in the future, or a career path; conversely however I enjoy the style of full-stack Web development.
+    script(type='text/javascript').
+      $(document).ready(function(){
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+              });
+          });
+        });
+
+        $("#scrollbtn").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 1300, function(){
+              window.location.hash = hash;
+            });
+          }
+        });
+      });
