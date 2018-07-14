@@ -148,6 +148,13 @@ h1{
     margin-bottom: 10px;
 	width: 80%;
 }
+.card-title{
+	color: black;
+	text-align: center;
+}
+.card-body{
+	padding: 2% 20%;
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 0px) { 
 	.navbar {
